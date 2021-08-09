@@ -1,0 +1,15 @@
+#Backend Docker GuideLine
+
+##Step 1: 
+docker build -t sample:dev2 .
+
+## Step 2:
+
+docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 5000:5000 \
+    -e CHOKIDAR_USEPOLLING=true \
+   sample:dev2
